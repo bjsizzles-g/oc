@@ -14,7 +14,10 @@ spec:
       containers:
       - name: your-container
         image: your-linux-image:latest
-        ports:
+        command:
+          - "/bin/sh"
+          - "-c"
+          - "tail -f /dev/null"        ports:
         - containerPort: 80
         livenessProbe:
           httpGet:
